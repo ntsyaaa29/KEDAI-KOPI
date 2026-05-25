@@ -1,0 +1,662 @@
+*{/* ==========================================================================
+    RESET & BASE STYLES (Mengatur Font & Dasar Halaman)
+    ========================================================================== */
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+ 
+ body {
+     font-family: 'Poppins', sans-serif;
+     background-color: #f7f1eb; /* Warna latar belakang krem pucat estetik */
+     color: #4a332d; /* Warna teks cokelat tua */
+ }
+ 
+ /* ==========================================================================
+    1. NAVBAR STYLES (Mengubah menu vertikal jadi horizontal)
+    ========================================================================== */
+ .navbar {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 25px 8%;
+     background-color: #f7f1eb;
+ }
+ 
+ .navbar .logo {
+     font-family: 'Merriweather', serif;
+     font-size: 28px;
+     font-weight: 700;
+     color: #4a332d;
+ }
+ 
+ .nav-links {
+     display: flex;
+     list-style: none;
+     gap: 30px;
+ }
+ 
+ .nav-links a {
+     text-decoration: none;
+     color: #6e5248;
+     font-size: 16px;
+     font-weight: 500;
+     transition: color 0.3s ease;
+ }
+ 
+ .nav-links a:hover, .nav-links a.active {
+     color: #4a332d;
+     font-weight: 600;
+ }
+ 
+ /* ==========================================================================
+    2. HERO SECTION STYLES (Bagian Banner Cokelat Muda)
+    ========================================================================== */
+ .hero-section {
+     background-color: #d7c0ae; /* Warna cokelat susu hangat seperti di gambar */
+     text-align: center;
+     padding: 60px 20px 180px 20px; /* Padding bawah sengaja besar untuk space gambar */
+     position: relative;
+ }
+ 
+ .hero-title {
+     font-family: 'Merriweather', serif;
+     font-size: 42px;
+     color: #4a332d;
+     margin-bottom: 15px;
+ }
+ 
+ .hero-tagline {
+     font-size: 16px;
+     color: #5c453d;
+     margin-bottom: 30px;
+ }
+ 
+ /* Tombol Melengkung dengan Efek Hover Semu */
+ .animated-button {
+     background-color: #ece0d1;
+     color: #4a332d;
+     border: none;
+     padding: 12px 35px;
+     font-size: 16px;
+     font-weight: 600;
+     border-radius: 12px;
+     cursor: pointer;
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+     transition: all 0.3s ease;
+ }
+ 
+ .animated-button:hover {
+     transform: translateY(-2px);
+     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+     background-color: #dbccbb;
+ }
+ 
+ /* Mengatur Posisi Gambar Kopi agar Melayang & Punya Frame */
+ .hero-image-container {
+     position: absolute;
+     bottom: -120px; /* Membuat gambar keluar setengah dari banner cokelat */
+     left: 50%;
+     transform: translateX(-50%);
+     width: 320px;
+     height: 320px;
+ }
+ 
+ .hero-image {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     border-radius: 25px; /* Sudut melengkung halus */
+     border: 8px solid #f7f1eb; /* Frame putih/krem tipis di sekeliling gambar */
+     box-shadow: 0 10px 30px rgba(74, 51, 45, 0.25); /* Bayangan lembut */
+ }
+ 
+ /* ==========================================================================
+    3. MAIN CONTENT & CARDS (Bagian Bawah: Kopi Pilihan)
+    ========================================================================== */
+ .main-content {
+     padding: 160px 8% 60px 8%; /* Padding atas besar untuk memberi ruang bagi gambar melayang */
+     text-align: center;
+ }
+ 
+ .section-title {
+     font-family: 'Merriweather', serif;
+     font-size: 28px;
+     color: #4a332d;
+     margin-bottom: 40px;
+ }
+ 
+ /* Flexbox untuk menyejajarkan 3 Card ke samping */
+ .card-container {
+     display: flex;
+     justify-content: center;
+     gap: 25px;
+     flex-wrap: wrap; /* Agar otomatis turun ke bawah jika dibuka di layar HP */
+ }
+ 
+ .card {
+     background-color: #ebd8c5; /* Background card cokelat pastel transparan */
+     border: 1px solid rgba(74, 51, 45, 0.1);
+     border-radius: 20px;
+     padding: 30px 25px;
+     max-width: 320px;
+     text-align: left;
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+     transition: transform 0.3s ease;
+ }
+ 
+ .card:hover {
+     transform: translateY(-5px);
+ }
+ 
+ .card h3 {
+     font-size: 20px;
+     margin-bottom: 15px;
+     color: #4a332d;
+ }
+ 
+ .card p {
+     font-size: 14px;
+     line-height: 1.6;
+     color: #6e5248;
+ }
+ 
+ /* Responsive / Tampilan Mobile */
+ @media (max-width: 768px) {
+     .navbar {
+         flex-direction: column;
+         gap: 15px;
+     }
+     .hero-title {
+         font-size: 32px;
+     }
+     .card-container {
+         flex-direction: column;
+         align-items: center;
+     }
+ }
+
+
+ /* ==========================================================================
+   HALAMAN ABOUT US (Tambahan Baru)
+   ========================================================================== */
+
+/* Banner Atas Halaman About */
+.about-hero {
+    background-color: #d7c0ae;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.about-title {
+    font-family: 'Merriweather', serif;
+    font-size: 36px;
+    color: #4a332d;
+    margin-bottom: 10px;
+}
+
+.about-subtitle {
+    font-size: 15px;
+    color: #5c453d;
+}
+
+/* Pembungkus Konten Utama (Kiri & Kanan) */
+.about-container {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 4%;
+    display: flex;
+    align-items: center;
+    gap: 50px; /* Jarak antara teks dan gambar */
+}
+
+/* Sektor Teks Cerita (Kiri) */
+.about-text {
+    flex: 1; /* Mengambil setengah bagian layar */
+}
+
+.about-text h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 28px;
+    color: #4a332d;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #6e5248;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* Poin Keunggulan Kecil di bawah teks */
+.about-features {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    background-color: #ebd8c5;
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #4a332d;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+/* Sektor Gambar (Kanan) */
+.about-image {
+    flex: 1; /* Mengambil setengah bagian layar lainnya */
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 450px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(74, 51, 45, 0.15);
+    border: 6px solid #ebd8c5; /* Bingkai senada */
+}
+
+/* RESPONSIVE LAYOUT UNTUK LAYAR HP */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; /* Gambar pindah ke bawah teks saat di HP */
+        text-align: center;
+        gap: 30px;
+        margin: 30px auto;
+    }
+    .about-text p {
+        text-align: center;
+    }
+    .about-features {
+        justify-content: center;
+    }
+    .about-image img {
+        height: 250px;
+    }
+}}
+
+/* ==========================================================================
+   HALAMAN MENU (Tambahan Baru)
+   ========================================================================== */
+
+/* Banner Atas Halaman Menu */
+.menu-hero {
+    background-color: #d7c0ae;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.menu-title {
+    font-family: 'Merriweather', serif;
+    font-size: 36px;
+    color: #4a332d;
+    margin-bottom: 10px;
+}
+
+.menu-subtitle {
+    font-size: 15px;
+    color: #5c453d;
+}
+
+/* Container utama bagian menu */
+.menu-section {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 4%;
+}
+
+.category-title {
+    font-family: 'Merriweather', serif;
+    font-size: 24px;
+    color: #4a332d;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #d7c0ae;
+    padding-bottom: 8px;
+}
+
+/* CSS Grid untuk membuat katalog otomatis menyamping (Responsive) */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Desain per Kotak Menu (Card Menu) */
+.menu-item {
+    background-color: #ebd8c5;
+    border-radius: 15px;
+    overflow: hidden; /* Supaya gambar atasnya ikut melengkung rapi */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+
+.menu-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.menu-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Membuat tinggi teks seimbang */
+}
+
+.menu-info h3 {
+    font-size: 18px;
+    color: #4a332d;
+    margin-bottom: 8px;
+}
+
+.menu-desc {
+    font-size: 13px;
+    color: #6e5248;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+/* Bagian Bawah Card Menu (Harga + Tombol) */
+.menu-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.menu-price {
+    font-size: 16px;
+    font-weight: 600;
+    color: #4a332d;
+}
+
+.order-btn {
+    background-color: #4a332d;
+    color: #f7f1eb;
+    border: none;
+    padding: 6px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.order-btn:hover {
+    background-color: #6e5248;
+}
+
+
+/* ==========================================================================
+   HALAMAN CONTACT (Tambahan Baru)
+   ========================================================================== */
+
+/* Banner Atas Halaman Contact */
+.contact-hero {
+    background-color: #d7c0ae;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.contact-title {
+    font-family: 'Merriweather', serif;
+    font-size: 36px;
+    color: #4a332d;
+    margin-bottom: 10px;
+}
+
+.contact-subtitle {
+    font-size: 15px;
+    color: #5c453d;
+}
+
+/* Pembungkus Utama Konten (2 Kolom) */
+.contact-container {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 4%;
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+/* --- Gaya Kolom Kiri: Info Cafe --- */
+.contact-info {
+    flex: 1;
+}
+
+.contact-info h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 26px;
+    color: #4a332d;
+    margin-bottom: 15px;
+}
+
+.info-intro {
+    font-size: 14px;
+    color: #6e5248;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.info-icon {
+    font-size: 22px;
+    background-color: #ebd8c5;
+    padding: 10px;
+    border-radius: 12px;
+    line-height: 1;
+}
+
+.info-item h3 {
+    font-size: 16px;
+    color: #4a332d;
+    margin-bottom: 3px;
+}
+
+.info-item p {
+    font-size: 14px;
+    color: #6e5248;
+    line-height: 1.5;
+}
+
+/* --- Gaya Kolom Kanan: Kotak Formulir --- */
+.contact-form-box {
+    flex: 1;
+    background-color: #ebd8c5;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form-box h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 24px;
+    color: #4a332d;
+    margin-bottom: 25px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #4a332d;
+}
+
+/* Styling Input & Textarea */
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid rgba(74, 51, 45, 0.2);
+    border-radius: 10px;
+    background-color: #f7f1eb;
+    color: #4a332d;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: #4a332d; /* Berubah warna gelap saat diklik */
+}
+
+/* Tombol Kirim Form */
+.submit-btn {
+    background-color: #4a332d;
+    color: #f7f1eb;
+    border: none;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #6e5248;
+}
+
+/* RESPONSIVE: Agar Tampilan Rapi di HP */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column; /* Kotak formulir berpindah ke bawah info kedai */
+        gap: 40px;
+    }
+    .contact-form-box {
+        width: 100%;
+        padding: 25px;
+    }
+}
+
+
+/* ==========================================================================
+   HALAMAN AUTH (Sign In & Sign Up)
+   ========================================================================== */
+
+/* Membuat background halaman penuh dan box berada tepat di tengah */
+.auth-container {
+    min-height: calc(100vh - 90px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* Box utama form log in & sign up */
+.auth-box {
+    background-color: #ebd8c5;
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 35px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.auth-header h2 {
+    font-family: 'Merriweather', serif;
+    color: #4a332d;
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.auth-header p {
+    font-size: 14px;
+    color: #6e5248;
+}
+
+/* ==========================================================================
+   GAYA KHUSUS HALAMAN SIGN IN & SIGN UP
+   ========================================================================== */
+
+/* Membuat pembungkus formulir berada tepat di tengah layar */
+.auth-container {
+    min-height: calc(100vh - 90px); /* Menghitung tinggi layar dikurangi navbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #f7f1eb;
+}
+
+/* Desain Kotak (Box) Form */
+.auth-box {
+    background-color: #ebd8c5;
+    width: 100%;
+    max-width: 420px; /* Lebar maksimal kotak pendaftaran */
+    padding: 40px 35px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.auth-header h2 {
+    font-family: 'Merriweather', serif;
+    color: #4a332d;
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.auth-header p {
+    font-size: 14px;
+    color: #6e5248;
+}
+
+/* Responsive: Agar kotak mengecil di layar HP */
+@media (max-width: 480px) {
+    .auth-box {
+        padding: 30px 20px;
+    }
+}
